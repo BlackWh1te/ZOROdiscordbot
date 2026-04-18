@@ -1,0 +1,18 @@
+{
+  "started": 1776477279738,
+  "version": "1.0",
+  "tasks": [],
+  "checkpoints": [
+    {
+      "id": 1776510520667,
+      "name": "startup",
+      "data": {
+        "time": 1776510520664,
+        "event": "bot_started"
+      },
+      "time": "2026-04-18T11:08:40.667Z",
+      "activeTasks": 0
+    }
+  ],
+  "lastSave": 1776483364175
+}

@@ -1,0 +1,20 @@
+{
+  "autoLearn": true,
+  "autoModerate": false,
+  "autoWelcome": true,
+  "autoRespond": [],
+  "personality": "helpful",
+  "language": "en",
+  "timezone": "UTC",
+  "actionsRequireConfirm": false,
+  "maxHistory": 50,
+  "customCommands": {},
+  "permissions": {
+    "createChannel": true,
+    "createRole": true,
+    "kick": true,
+    "ban": true,
+    "manageRoles": true,
+    "manageChannels": true
+  }
+}
