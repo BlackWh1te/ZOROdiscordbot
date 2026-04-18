@@ -244,9 +244,36 @@ The bot automatically:
 ✅ **Reliable** - Tested and production-ready
 ✅ **Supported** - Active development and community
 
+## 🏢 Production Hosting
+
+### Recommended Setup
+- **VPS/Cloud Server** (DigitalOcean, Linode, Vultr) - $3-5/month
+- **Docker Container** for portability
+- **PM2** for process management
+
+### Quick Production Start
+```bash
+# One-command setup
+curl -sL https://ollama.com/install.sh | sh && \
+mkdir /bot && cd /bot && \
+git clone https://github.com/BlackWh1te/ZOROdiscordbot.git && \
+cd ZOROdiscordbot/DSbot && \
+npm install && \
+printf "OLLAMA_HOST=http://localhost:11434\n" > .env && \
+pm2 start index.js && \
+pm2 startup && \
+pm2 save
+```
+
+## 🔌 Connection Settings
+- **OLLAMA_HOST**: `http://localhost:11434` (same server)
+- **Discord Token**: Set in `.env` file
+
 ## 📞 Support & Development
 
 - Check GitHub issues for troubleshooting
+- See [Production Hosting](#production-hosting) section
+- Monitor with `pm2 logs`
 - Add new skills to `utils/` directory
 - Follow SKILL.md format for custom skills
 - Contribute features and improvements
