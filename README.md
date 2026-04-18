@@ -23,18 +23,26 @@ zoroBOT is an **AI-powered Discord bot** designed to automate server management 
 
 ## 📖 Quick Start
 
-```bash
-# Install dependencies
-npm install
+### 1. Install Ollama
+Visit [https://ollama.com/](https://ollama.com/) and download for your OS
 
-# Start the bot
-npm start
+### 2. Install Dependencies
+```bash
+npm install
 ```
 
-## ⚙️ Configuration
+### 3. Start Ollama
+```bash
+ollama serve
+```
 
-Create a `.env` file in the root:
+### 4. Pull AI Models
+```bash
+ollama pull llama3.2:latest
+```
 
+### 5. Configure Bot
+Create a `.env` file:
 ```
 DISCORD_TOKEN=your_discord_bot_token
 CLIENT_ID=your_application_id
@@ -44,6 +52,52 @@ CHAT_CHANNEL=1490636861293465660
 OLLAMA_HOST=http://localhost:11434
 OLLAMA_MODEL=llama3.2:latest
 PUBLIC_MODE=false
+```
+
+### 6. Start the Bot
+```bash
+npm start
+```
+
+Or with custom Ollama config:
+```bash
+OLLAMA_HOST=http://your-ollama-server:port OLLAMA_MODEL=your-model npm start
+```
+
+## 🔧 Ollama Setup Guide
+
+### Install Ollama
+1. Download Ollama from [https://ollama.com/](https://ollama.com/)
+2. Visit [https://docs.ollama.com/](https://docs.ollama.com/) for detailed documentation
+3. Install on your system (Windows, macOS, or Linux)
+
+### Start Ollama
+```bash
+ollama serve
+```
+
+### Pull AI Models
+```bash
+ollama pull llama3.2:latest
+```
+
+### Verify Ollama is Running
+```bash
+ollama list
+```
+
+### Example API Key Setup
+If using Ollama with API authentication:
+1. Get your API key from Ollama dashboard
+2. Set in `.env`:
+   ```
+   OLLAMA_API_KEY=your_api_key_here
+   OLLAMA_BASE_URL=http://localhost:11434/api
+   ```
+
+### Test Ollama Connection
+```bash
+curl http://localhost:11434/api/tags
 ```
 
 ## 📋 Available Commands
@@ -98,11 +152,23 @@ Role-based leveling
 !ai webhook [url] [message]  # Send via webhook
 ```
 
+### 🧠 Ollama Integration
+All AI commands require Ollama running locally:
+- Models: llama3.2:latest, llama3.2-vision:latest
+- The bot sends natural language to Ollama for processing
+- No API keys required for local Ollama
+
 ### 🛡️ Built-in Moderation
 - Bad word filtering (20+ common bad words)
 - Spam detection (messages >200 chars or 3+ mentions)
 - Automatic warnings and bans
 - Anti-raid protection
+
+### 🧠 Ollama Integration
+All AI commands require Ollama running locally:
+- Models: llama3.2:latest, llama3.2-vision:latest
+- The bot sends natural language to Ollama for processing
+- No API keys required for local Ollama
 
 ## 📁 Storage Structure
 
